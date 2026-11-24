@@ -3,13 +3,12 @@ import TopBar from "../components/TopBar";
 import BottomBar from "../components/BottomBar";
 import KopiCard from "../components/KopiCard";
 import axios from 'axios';
-import { Container } from 'react-bootstrap';
 
 const Dashboard = () => {
   const [listKopi, setListKopi] = useState([]);
   
   useEffect(() => {
-    axios.get("http://127.0.0.1:3000/")
+    axios.get("http://cofflow.my.id/api/menus")
     .then((response) => {
       console.log(response.data.data);
       setListKopi(response.data.data)
